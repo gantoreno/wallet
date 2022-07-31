@@ -1,6 +1,12 @@
 import { useRouter } from "next/router"
 
-import { Overview, PageLoader } from "../components/composite"
+import {
+  History,
+  Loan,
+  Overview,
+  PageLoader,
+  Report,
+} from "../components/composite"
 import { Container, Section, Wrapper } from "../components/layout"
 import { useAuth } from "../hooks"
 
@@ -28,6 +34,24 @@ const Home = ({}: HomeProps) => {
             Your <span className="text-teal-400">Overview</span>
           </Section.Title>
           <Overview />
+        </Section>
+        <Section>
+          <Section.Title>
+            Monthly <span className="text-teal-400">Report</span>
+          </Section.Title>
+          <Report />
+        </Section>
+        <Section>
+          <Section.Title>
+            Pending <span className="text-teal-400">Loans</span>
+          </Section.Title>
+          <Loan />
+        </Section>
+        <Section>
+          <Section.Title>
+            Payment <span className="text-teal-400">History</span>
+          </Section.Title>
+          <History />
         </Section>
       </Container>
     </Wrapper>

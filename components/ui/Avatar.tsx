@@ -5,7 +5,7 @@ type AvatarProps = {
 
 const Avatar = ({ firstName, lastName }: AvatarProps) => {
   return (
-    <div className="border border-gray-200 p-2 bg-gray-100 rounded-full text-md text-neutral-400 font-bold">
+    <div className="flex aspect-square items-center justify-center rounded-full border border-gray-200 bg-gray-100 p-2 text-sm font-bold text-neutral-400">
       {firstName[0]}
       {lastName[0]}
     </div>
