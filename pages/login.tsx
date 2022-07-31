@@ -32,11 +32,13 @@ const Login = ({ users }: LoginProps) => {
 
   if (currentUser) {
     router.push("/")
+
+    return null
   }
 
   return (
     <Container>
-      <div className="min-h-screen flex mx-auto items-center max-w-sm">
+      <div className="mx-auto flex min-h-screen max-w-sm items-center">
         <LoginCard users={users} onSubmit={login} />
       </div>
     </Container>

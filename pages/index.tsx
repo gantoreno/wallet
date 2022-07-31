@@ -8,7 +8,7 @@ type HomeProps = {}
 
 const Home = ({}: HomeProps) => {
   const router = useRouter()
-  const { isLoading, user, logout } = useAuth()
+  const { isLoading, user } = useAuth()
 
   if (isLoading) {
     return <PageLoader />
@@ -16,12 +16,14 @@ const Home = ({}: HomeProps) => {
 
   if (!user) {
     router.push("/login")
+
+    return null
   }
 
   return (
     <Wrapper>
       <Container>
-        <div className="text-center text-neutral-400 font-light">
+        <div className="text-center font-light text-neutral-400">
           Nothing to see here... Yet {"😏"}
         </div>
       </Container>

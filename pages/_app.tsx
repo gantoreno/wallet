@@ -5,7 +5,7 @@ import AuthProvider from "../context/AuthProvider"
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <div className="bg-gray-100 min-h-screen">
+    <div className="min-h-screen bg-gray-100">
       <AuthProvider>
         <Component {...pageProps} />
       </AuthProvider>

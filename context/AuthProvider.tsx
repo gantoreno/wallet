@@ -9,20 +9,24 @@ export type Auth = {
   user: User | null
 }
 
+type Load = {
+  action: "load"
+  payload: boolean
+}
+
 type Login = {
   action: "login"
-  payload: User
+  payload: {
+    user: User
+    remember: boolean
+  }
 }
 
 type Logout = {
   action: "logout"
 }
 
-type Settle = {
-  action: "settle"
-}
-
-type Update = Login | Logout | Settle
+type Update = Load | Login | Logout
 
 const authInitialState = {
   isLoading: true,
@@ -37,15 +41,27 @@ export const DispatchAuthContext = createContext<Dispatch<Update>>(
 
 const reducer = (state: Auth, update: Update): Auth => {
   switch (update.action) {
-    case "login":
-      localStorage.setItem("user", update.payload.id)
+    case "load":
       return {
         ...state,
-        user: update.payload,
+        isLoading: update.payload,
+      }
+    case "login":
+      if (update.payload.remember) {
+        localStorage.setItem("user", update.payload.user.id)
+      } else {
+        sessionStorage.setItem("user", update.payload.user.id)
+      }
+
+      return {
+        ...state,
+        user: update.payload.user,
         isLoading: false,
       }
     case "logout":
       localStorage.removeItem("user")
+      sessionStorage.removeItem("user")
+
       return {
         ...state,
         user: null,
@@ -64,7 +80,11 @@ const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, authInitialState)
 
   const getStoredUser = async () => {
-    const storedUserId = localStorage.getItem("user")
+    dispatch({ action: "load", payload: true })
+
+    const storedUserId =
+      sessionStorage.getItem("user") ?? localStorage.getItem("user")
+    const remember = !!localStorage.getItem("user")
 
     if (!storedUserId) {
       dispatch({ action: "logout" })
@@ -82,7 +102,10 @@ const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 
     dispatch({
       action: "login",
-      payload: user,
+      payload: {
+        user,
+        remember,
+      },
     })
   }
 

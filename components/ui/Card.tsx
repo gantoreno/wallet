@@ -23,7 +23,7 @@ const Card = ({ children }: CardProps) => {
 }
 
 const Title = ({ children }: CardTitleProps) => {
-  return <h3 className="mb-10 text-2xl text-center">{children}</h3>
+  return <h3 className="mb-10 text-2xl text-center font-bold text-neutral-700">{children}</h3>
 }
 
 const Body = ({ children }: CardBodyProps) => {

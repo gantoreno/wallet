@@ -13,7 +13,9 @@ const useAuth = (): Auth & AuthActions => {
   const auth = useContext(AuthContext)
   const authDispatch = useContext(DispatchAuthContext)
 
-  const login = async (userId: string) => {
+  const login = async (userId: string, remember: boolean = false) => {
+    authDispatch({ action: "load", payload: true })
+
     const user = await fetchUserById(userId)
 
     if (!user) {
@@ -22,11 +24,15 @@ const useAuth = (): Auth & AuthActions => {
 
     authDispatch({
       action: "login",
-      payload: user,
+      payload: {
+        user,
+        remember,
+      },
     })
   }
 
   const logout = async () => {
+    authDispatch({ action: "load", payload: true })
     authDispatch({
       action: "logout",
     })
