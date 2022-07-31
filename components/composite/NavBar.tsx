@@ -20,7 +20,7 @@ const NavBar = ({}: NavBarProps) => {
           </div>
           <div className="flex items-center justify-end">
             <div className="mr-5 text-right leading-[0px]">
-              <h4 className="text-xs font-light uppercase text-neutral-700">
+              <h4 className="text-xs font-bold uppercase text-neutral-700">
                 Welcome,{" "}
                 <span className="font-bold text-teal-400">
                   {user?.firstName}
@@ -30,7 +30,7 @@ const NavBar = ({}: NavBarProps) => {
                 className="p-0 text-xs font-light uppercase text-neutral-400 hover:text-neutral-700"
                 onClick={logout}
               >
-                Logout
+                Sign Out
               </button>
             </div>
             <Avatar

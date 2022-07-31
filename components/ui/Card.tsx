@@ -16,14 +16,18 @@ type CardFooterProps = {
 
 const Card = ({ children }: CardProps) => {
   return (
-    <div className="bg-white p-10 rounded-lg border border-gray-200 w-full">
+    <div className="w-full rounded-lg border border-gray-200 bg-white p-10">
       {children}
     </div>
   )
 }
 
 const Title = ({ children }: CardTitleProps) => {
-  return <h3 className="mb-10 text-2xl text-center font-bold text-neutral-700">{children}</h3>
+  return (
+    <h3 className="mb-10 text-center text-xl font-bold uppercase text-neutral-700">
+      {children}
+    </h3>
+  )
 }
 
 const Body = ({ children }: CardBodyProps) => {
