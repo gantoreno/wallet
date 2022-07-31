@@ -31,7 +31,7 @@ const LoginCard = ({ users, onSubmit }: LoginCardProps) => {
           <span className="font-bold text-teal-400">dropdown</span> list
         </div>
         <select
-          className="mb-5 w-full rounded-md border border-gray-200 text-xs font-light text-neutral-600"
+          className="mb-5 w-full rounded-md border border-gray-200 text-xs font-light uppercase text-neutral-600"
           onChange={(evt) => setSelectedUserId(evt.target.value)}
           value={selectedUserId}
         >
@@ -65,7 +65,7 @@ const LoginCard = ({ users, onSubmit }: LoginCardProps) => {
         </div>
         <div className="mt-10">
           <small className="text-xs font-light uppercase text-neutral-400">
-            {metadata.name} v{metadata.version}
+            {metadata.name} {metadata.version}
           </small>
         </div>
       </Card.Footer>

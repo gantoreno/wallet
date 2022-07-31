@@ -4,7 +4,7 @@ type PageLoaderProps = {}
 
 const PageLoader = ({}: PageLoaderProps) => {
   return (
-    <div className="w-screen h-screen flex justify-center items-center">
+    <div className="flex h-screen w-screen items-center justify-center bg-white">
       <Loader />
     </div>
   )

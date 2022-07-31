@@ -1,16 +1,19 @@
 import "../styles/globals.css"
 
+import Head from "next/head"
 import type { AppProps } from "next/app"
 import AuthProvider from "../context/AuthProvider"
-import Head from "next/head"
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <div className="min-h-screen bg-gray-100">
+    <>
+      <Head>
+        <body className="bg-gray-100" />
+      </Head>
       <AuthProvider>
         <Component {...pageProps} />
       </AuthProvider>
-    </div>
+    </>
   )
 }
 

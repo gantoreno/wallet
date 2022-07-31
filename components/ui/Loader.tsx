@@ -2,7 +2,7 @@ type LoaderProps = {}
 
 const Loader = ({}: LoaderProps) => {
   return (
-    <div className="w-10 h-10 border-4 border-l-gray-900 rounded-full animate-spin"></div>
+    <div className="h-10 w-10 animate-spin rounded-full border-4 border-l-teal-400"></div>
   )
 }
 

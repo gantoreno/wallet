@@ -8,8 +8,8 @@ const Wrapper = ({ children }: WrapperProps) => {
   return (
     <>
       <NavBar />
-      <div style={{ paddingTop: 82 }}>
-        <div style={{ marginTop: 20 }}>{children}</div>
+      <div style={{ paddingTop: 82, paddingBottom: 40, minHeight: "100vh" }}>
+        {children}
       </div>
     </>
   )

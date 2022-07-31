@@ -1,7 +1,7 @@
 import { useRouter } from "next/router"
 
-import { PageLoader } from "../components/composite"
-import { Container, Wrapper } from "../components/layout"
+import { Overview, PageLoader } from "../components/composite"
+import { Container, Section, Wrapper } from "../components/layout"
 import { useAuth } from "../hooks"
 
 type HomeProps = {}
@@ -23,9 +23,12 @@ const Home = ({}: HomeProps) => {
   return (
     <Wrapper>
       <Container>
-        <div className="text-center font-light text-neutral-400">
-          Nothing to see here... Yet {"😏"}
-        </div>
+        <Section>
+          <Section.Title>
+            Your <span className="text-teal-400">Overview</span>
+          </Section.Title>
+          <Overview />
+        </Section>
       </Container>
     </Wrapper>
   )

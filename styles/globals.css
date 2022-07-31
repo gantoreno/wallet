@@ -4,6 +4,19 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
+*:hover {
+  /* transition-duration: 250ms; */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+input,
+div,
+nav,
+button {
   transition-duration: 250ms;
 }
