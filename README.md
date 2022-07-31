@@ -4,7 +4,7 @@
 
 # Wallet
 
-Budget tracking app for Gabriel's (me) family.
+Budget tracking app for Gabriel's (me) family, built with [Next.js](https://nextjs.org/), [TailwindCSS](https://tailwindcss.com/) and [Prisma](https://www.prisma.io/).
 
 ## Scripts
 
