@@ -8,7 +8,7 @@ type ButtonProps = {
 const Button = ({ title, color, onClick, disabled }: ButtonProps) => {
   return (
     <button
-      className={`rounded-md bg-${color}-400 px-5 py-2 font-medium text-white hover:bg-${color}-300 disabled:bg-neutral-200 disabled:text-neutral-400`}
+      className={`rounded-md bg-${color}-400 px-5 py-2 font-light text-white hover:bg-${color}-300 text-xs uppercase disabled:bg-neutral-200 disabled:text-neutral-400`}
       onClick={onClick}
       disabled={disabled}
     >

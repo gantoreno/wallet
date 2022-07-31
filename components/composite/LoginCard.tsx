@@ -4,7 +4,9 @@ import { useState } from "react"
 
 import { Button, Card } from "../ui"
 
-import wallet from "../../assets/svg/wallet.svg"
+import wealthy from "../../assets/svg/wealthy.svg"
+
+import metadata from "../../package.json"
 
 type LoginCardProps = {
   users: User[]
@@ -18,7 +20,7 @@ const LoginCard = ({ users, onSubmit }: LoginCardProps) => {
   return (
     <Card>
       <div className="mb-10 text-center">
-        <Image src={wallet} alt="Wallet" />
+        <Image src={wealthy} alt="Wealthy" />
       </div>
       <Card.Title>Login</Card.Title>
       <Card.Body>
@@ -27,7 +29,7 @@ const LoginCard = ({ users, onSubmit }: LoginCardProps) => {
           <span className="font-bold text-teal-400">dropdown</span> list
         </div>
         <select
-          className="mb-5 w-full rounded-md border border-gray-200 text-neutral-700"
+          className="mb-5 w-full rounded-md border border-gray-200 font-light text-neutral-600"
           onChange={(evt) => setSelectedUserId(evt.target.value)}
           value={selectedUserId}
         >
@@ -43,7 +45,7 @@ const LoginCard = ({ users, onSubmit }: LoginCardProps) => {
             type="checkbox"
             checked={shouldRemember}
             onChange={() => setShouldRemember(!shouldRemember)}
-            className="mr-5 h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-200 checked:bg-teal-400"
+            className="mr-5 h-5 w-5 cursor-pointer rounded-md border border-gray-200 text-teal-400"
           />
           <label className="text-xs font-light uppercase text-neutral-400">
             Remember me?
@@ -51,12 +53,19 @@ const LoginCard = ({ users, onSubmit }: LoginCardProps) => {
         </div>
       </Card.Body>
       <Card.Footer>
-        <Button
-          title="Login"
-          color="teal"
-          onClick={() => onSubmit(selectedUserId, shouldRemember)}
-          disabled={!selectedUserId}
-        />
+        <div className="w-full text-center">
+          <Button
+            title="Login"
+            color="teal"
+            onClick={() => onSubmit(selectedUserId, shouldRemember)}
+            disabled={!selectedUserId}
+          />
+        </div>
+        <div className="mt-10">
+          <small className="text-xs font-light uppercase text-neutral-400">
+            {metadata.name} v{metadata.version}
+          </small>
+        </div>
       </Card.Footer>
     </Card>
   )

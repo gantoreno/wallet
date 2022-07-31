@@ -1,8 +1,8 @@
 <p align="center">
-  <img src="assets/svg/wallet.svg" alt="Wallet" height="150">
+  <img src="assets/svg/wealthy.svg" alt="Wealthy" height="150">
 </p>
 
-# Wallet
+# Wealthy
 
 Budget tracking app for Gabriel's (me) family, built with [Next.js](https://nextjs.org/), [TailwindCSS](https://tailwindcss.com/) and [Prisma](https://www.prisma.io/).
 
