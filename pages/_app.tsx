@@ -2,6 +2,7 @@ import "../styles/globals.css"
 
 import Head from "next/head"
 import type { AppProps } from "next/app"
+
 import AuthProvider from "../context/AuthProvider"
 
 function MyApp({ Component, pageProps }: AppProps) {
